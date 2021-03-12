@@ -7,7 +7,7 @@ OBJS   = $(SRCS:.cpp=.o)
 
 .PHONY: clean
 
-all:	$(TARGET)
+all:	$(TARGET) clean
 
 $(TARGET):	$(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
@@ -16,4 +16,7 @@ $(TARGET):	$(OBJS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS)
+
+cleanT:
+	rm -f $(TARGET)
