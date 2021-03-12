@@ -1,18 +1,16 @@
 CXX      = g++
 CXXFLAGS = -Wall -g
-LDFLAGS  =
 
 TARGET = complex
 SRCS   = main.cpp complex.cpp
 OBJS   = $(SRCS:.cpp=.o)
 
-
-.PHONY: clean all
+.PHONY: clean
 
 all:	$(TARGET)
 
 $(TARGET):	$(OBJS)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(OBJS) -o $(TARGET)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
 
 .cpp.o:
 	$(CXX) $(CXXFLAGS) -c $< -o $@

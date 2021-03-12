@@ -53,7 +53,6 @@ class Complex
            return sqrt(this->real* this->real + this->imag * this->imag);
        }
 
-
        // print complex number
        void output()
        {
@@ -62,6 +61,5 @@ class Complex
            else
                cout << "Output Complex number: " << this->real << "+" << this->imag << "i \n";
        }
-
 };
 
