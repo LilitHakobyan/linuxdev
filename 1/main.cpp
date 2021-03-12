@@ -5,8 +5,8 @@ using namespace std;
 
 // sorting complex vector
 vector<Complex> ComplexVectorSort(std::vector<Complex> arr){
-    for(int i = 0; i < arr.size()-1; ++i){
-        for(int j = 0; j < arr.size()-1; ++j){
+    for(int i = 0; i < static_cast<int>(arr.size()-1); ++i){
+        for(int j = 0; j < static_cast<int>(arr.size()-1); ++j){
             if(arr[j].absaluteValue() > arr[j+1].absaluteValue()){
                 swap(arr[j],arr[j+1]);
             }
@@ -35,7 +35,7 @@ int main()
 
     // create complex vector and init
     vector<Complex> complexVecor(5);
-    for(int i = 0;i < complexVecor.size(); ++i){
+    for(int i = 0;i < static_cast<int>(complexVecor.size()); ++i){
         int a ,b;
         cin >> a;
         cin >> b;
@@ -47,9 +47,9 @@ int main()
     vector<Complex> sortedVec = ComplexVectorSort(complexVecor);
 
     cout << "print complex sorted vector \n";
-    
+
     // print sorted vector
-     for(int j = 0;j < sortedVec.size(); ++j){
+     for(int j = 0;j < static_cast<int>(sortedVec.size()); ++j){
         sortedVec[j].output();
     }
 

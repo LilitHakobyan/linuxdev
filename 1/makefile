@@ -1,17 +1,21 @@
-# Define required macros here
-SHELL = /bin/sh
+CXX      = g++
+CXXFLAGS = -Wall -g
+LDFLAGS  =
 
-OBJS =  main.cpp complex.cpp 
-CFLAG = -Wall -g
-CC = g++
-INCLUDE =
-LIBS = -lm
+TARGET = complex
+SRCS   = main.cpp complex.cpp
+OBJS   = $(SRCS:.cpp=.o)
 
-complex:	${OBJ}
-	${CC} ${CFLAGS} ${INCLUDES} -o $@ ${OBJS} ${LIBS}
 
-clean:
-	-rm -f *.o core *.core
+.PHONY: clean all
+
+all:	$(TARGET)
+
+$(TARGET):	$(OBJS)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(OBJS) -o $(TARGET)
 
 .cpp.o:
-	${CC} ${CFLAGS} ${INCLUDES} -c $<
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS) $(TARGET)
