@@ -13,10 +13,11 @@ vector<Complex> ComplexVectorSort(std::vector<Complex> arr){
         }
     }
 
+    // returns sorted vector
     return arr;
 }
 
-// start pont for app
+// start point for app
 int main()
 {
     // // declare result
@@ -31,6 +32,7 @@ int main()
     // result.output();
 
    cout << "Init complex vector \n";
+
     // create complex vector and init
     vector<Complex> complexVecor(5);
     for(int i = 0;i < complexVecor.size(); ++i){
@@ -45,6 +47,7 @@ int main()
     vector<Complex> sortedVec = ComplexVectorSort(complexVecor);
 
     cout << "print complex sorted vector \n";
+    
     // print sorted vector
      for(int j = 0;j < sortedVec.size(); ++j){
         sortedVec[j].output();

@@ -11,10 +11,12 @@ class Complex
       int real;
       int imag;
 
-     public:
+    // default init
+    public:
        Complex(): real(0), imag(0){ }
 
-     public:
+    // creates new complex number
+    public:
        Complex(int r, int i){
            this->real = r;
            this->imag = i;
