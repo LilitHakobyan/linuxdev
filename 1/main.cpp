@@ -1,5 +1,6 @@
 #include <iostream>
-#include "complex.cpp"
+#include "complex.h"
+#include <vector>
 
 using namespace std;
 

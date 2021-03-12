@@ -2,12 +2,12 @@ CXX      = g++
 CXXFLAGS = -Wall -g
 
 TARGET = complex
-SRCS   = main.cpp complex.cpp
+SRCS   = main.cpp complex.cpp complex.h
 OBJS   = $(SRCS:.cpp=.o)
 
 .PHONY: clean
 
-all:	$(TARGET) clean
+all:	$(TARGET)
 
 $(TARGET):	$(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
@@ -16,7 +16,4 @@ $(TARGET):	$(OBJS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
-
-cleanT:
-	rm -f $(TARGET)
+	rm -f $(TARGET) *.o
