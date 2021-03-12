@@ -6,9 +6,10 @@ using namespace std;
 // sorting complex vector
 vector<Complex> ComplexVectorSort(std::vector<Complex> arr){
     for(int i = 0; i < arr.size()-1; ++i){
-        if(arr[i].absaluteValue() > arr[i+1].absaluteValue()){
-            swap(arr[i],arr[i+1]);
-            // arr[i].output();
+        for(int j = 0; j < arr.size()-1; ++j){
+            if(arr[j].absaluteValue() > arr[j+1].absaluteValue()){
+                swap(arr[j],arr[j+1]);
+            }
         }
     }
 
